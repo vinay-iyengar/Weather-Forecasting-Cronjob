@@ -1,0 +1,4 @@
+username: "vinayiyengar23@gmail.com"
+password: "VmluYXlAMjM5Nw==" # Encode the password with Base64 (Base64.getEncoder().encodeToString(encryptedPassword.toByteArray()))
+
+# Enable authentication security for the above email account https://www.google.com/settings/security/lesssecureapps

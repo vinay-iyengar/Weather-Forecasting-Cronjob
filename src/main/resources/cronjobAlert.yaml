@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cronjob-mail-alert
+spec:
+  schedule: "*/1 * * * *" # Run every one minute
+  concurrencyPolicy: Forbid # Parallel runs
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: cronjob-mail-alert
+              image: cronjob-mail
+              imagePullPolicy: IfNotPresent
+              args:
+                - java
+                - -jar
+                - cronjob-mail-1.0.jar
+          restartPolicy: Never
